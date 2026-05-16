@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="QA API Training Lab - Newman CI" tests="17" time="1.469">
+  <testsuite name="01 Public Endpoints / GET Health" id="b0af1f9c-5845-4814-8151-338b020d33c7" timestamp="2026-05-16T06:36:43.644Z" tests="5" failures="0" errors="0" time="0.288">
+    <testcase name="Status is 200" time="0.288" classname="01PublicEndpointsGetHealth"/>
+    <testcase name="Response is JSON" time="0.288" classname="01PublicEndpointsGetHealth"/>
+    <testcase name="Health status is ok" time="0.288" classname="01PublicEndpointsGetHealth"/>
+    <testcase name="Health response has service and timestamp" time="0.288" classname="01PublicEndpointsGetHealth"/>
+    <testcase name="Response time is below 3000ms" time="0.288" classname="01PublicEndpointsGetHealth"/>
+  </testsuite>
+  <testsuite name="01 Public Endpoints / GET Clinics" id="f7a9e620-f66d-46a1-81ba-c97013298ff8" timestamp="2026-05-16T06:36:43.644Z" tests="4" failures="0" errors="0" time="0.079">
+    <testcase name="Status is 200" time="0.079" classname="01PublicEndpointsGetClinics"/>
+    <testcase name="Clinics response is an array" time="0.079" classname="01PublicEndpointsGetClinics"/>
+    <testcase name="At least one clinic exists" time="0.079" classname="01PublicEndpointsGetClinics"/>
+    <testcase name="Clinic has expected fields" time="0.079" classname="01PublicEndpointsGetClinics"/>
+  </testsuite>
+  <testsuite name="01 Public Endpoints / GET Doctors" id="a6f7aecd-ede8-4917-8cae-54ea637e19cc" timestamp="2026-05-16T06:36:43.644Z" tests="4" failures="0" errors="0" time="0.078">
+    <testcase name="Status is 200" time="0.078" classname="01PublicEndpointsGetDoctors"/>
+    <testcase name="Doctors response is an array" time="0.078" classname="01PublicEndpointsGetDoctors"/>
+    <testcase name="At least one doctor exists" time="0.078" classname="01PublicEndpointsGetDoctors"/>
+    <testcase name="Doctor has expected fields" time="0.078" classname="01PublicEndpointsGetDoctors"/>
+  </testsuite>
+  <testsuite name="01 Public Endpoints / GET Doctors by Specialty" id="06172644-46e4-4a2e-99fc-6e025e342cad" timestamp="2026-05-16T06:36:43.644Z" tests="3" failures="0" errors="0" time="0.071">
+    <testcase name="Status is 200" time="0.071" classname="01PublicEndpointsGetDoctorsBySpecialty"/>
+    <testcase name="Filtered doctors response is an array" time="0.071" classname="01PublicEndpointsGetDoctorsBySpecialty"/>
+    <testcase name="All returned doctors match requested specialty" time="0.071" classname="01PublicEndpointsGetDoctorsBySpecialty"/>
+  </testsuite>
+  <testsuite name="02 Patients / GET Patients" id="f1d99f06-5f61-4704-b9ce-1dc303533781" timestamp="2026-05-16T06:36:43.644Z" tests="3" failures="0" errors="0" time="0.078">
+    <testcase name="Status is 200" time="0.078" classname="02PatientsGetPatients"/>
+    <testcase name="Patients response is an array" time="0.078" classname="02PatientsGetPatients"/>
+    <testcase name="Patient records have expected fields when data exists" time="0.078" classname="02PatientsGetPatients"/>
+  </testsuite>
+  <testsuite name="02 Patients / GET Patients by Search" id="4a5513b8-bc04-41cc-a0f1-4e6120e2250b" timestamp="2026-05-16T06:36:43.644Z" tests="2" failures="0" errors="0" time="0.078">
+    <testcase name="Status is 200" time="0.078" classname="02PatientsGetPatientsBySearch"/>
+    <testcase name="Search response is an array" time="0.078" classname="02PatientsGetPatientsBySearch"/>
+  </testsuite>
+  <testsuite name="02 Patients / GET Patient by ID" id="b0047811-6867-4d37-baa9-f8fd32a494f6" timestamp="2026-05-16T06:36:43.644Z" tests="2" failures="0" errors="0" time="0.073">
+    <testcase name="Status is 200" time="0.073" classname="02PatientsGetPatientById"/>
+    <testcase name="Patient ID matches requested ID" time="0.073" classname="02PatientsGetPatientById"/>
+  </testsuite>
+  <testsuite name="02 Patients / GET Patient by Missing ID" id="09c6376a-d3e1-478a-bda3-967d07e1b805" timestamp="2026-05-16T06:36:43.644Z" tests="2" failures="0" errors="0" time="0.067">
+    <testcase name="Status is 404" time="0.067" classname="02PatientsGetPatientByMissingId"/>
+    <testcase name="Error response has message" time="0.067" classname="02PatientsGetPatientByMissingId"/>
+  </testsuite>
+  <testsuite name="02 Patients / POST Create Patient" id="77035c04-2ae7-4a9f-a609-ef63412e7cd4" timestamp="2026-05-16T06:36:43.644Z" tests="3" failures="0" errors="0" time="0.073">
+    <testcase name="Status is 201" time="0.073" classname="02PatientsPostCreatePatient"/>
+    <testcase name="Created patient has ID" time="0.073" classname="02PatientsPostCreatePatient"/>
+    <testcase name="Created patient email matches request" time="0.073" classname="02PatientsPostCreatePatient"/>
+  </testsuite>
+  <testsuite name="02 Patients / POST Create Patient - Duplicate Email" id="4d234547-c7ce-41fe-bfc5-2560f2c088f4" timestamp="2026-05-16T06:36:43.644Z" tests="2" failures="0" errors="0" time="0.067">
+    <testcase name="Status is 409 for duplicate email" time="0.067" classname="02PatientsPostCreatePatientDuplicateEmail"/>
+    <testcase name="Duplicate error response has message" time="0.067" classname="02PatientsPostCreatePatientDuplicateEmail"/>
+  </testsuite>
+  <testsuite name="03 Authentication / POST Login - Valid" id="d87e1aed-d5fc-42fe-a9f7-29259d609d82" timestamp="2026-05-16T06:36:43.644Z" tests="2" failures="0" errors="0" time="0.072">
+    <testcase name="Status is 200" time="0.072" classname="03AuthenticationPostLoginValid"/>
+    <testcase name="Login returns access token" time="0.072" classname="03AuthenticationPostLoginValid"/>
+  </testsuite>
+  <testsuite name="03 Authentication / POST Login - Invalid Password" id="78f3d083-54af-46bb-922d-6676ed491de4" timestamp="2026-05-16T06:36:43.644Z" tests="1" failures="0" errors="0" time="0.071">
+    <testcase name="Status is 401 for invalid credentials" time="0.071" classname="03AuthenticationPostLoginInvalidPassword"/>
+  </testsuite>
+  <testsuite name="04 Appointments - Protected / GET Appointments - Without Token" id="c1e22e56-ae82-4268-a94c-804c388e0c07" timestamp="2026-05-16T06:36:43.644Z" tests="1" failures="0" errors="0" time="0.065">
+    <testcase name="Status is 401 without token" time="0.065" classname="04AppointmentsProtectedGetAppointmentsWithoutToken"/>
+  </testsuite>
+  <testsuite name="04 Appointments - Protected / GET Appointments - With Token" id="b1076c60-4660-4792-b5a0-ab3f27cc82cc" timestamp="2026-05-16T06:36:43.644Z" tests="2" failures="0" errors="0" time="0.079">
+    <testcase name="Status is 200 with valid token" time="0.079" classname="04AppointmentsProtectedGetAppointmentsWithToken"/>
+    <testcase name="Appointments response is an array" time="0.079" classname="04AppointmentsProtectedGetAppointmentsWithToken"/>
+  </testsuite>
+  <testsuite name="04 Appointments - Protected / POST Create Appointment" id="7c0eaf5a-9672-4e4a-b92a-0be5bdfb0065" timestamp="2026-05-16T06:36:43.644Z" tests="3" failures="0" errors="0" time="0.071">
+    <testcase name="Status is 201" time="0.071" classname="04AppointmentsProtectedPostCreateAppointment"/>
+    <testcase name="Created appointment has ID" time="0.071" classname="04AppointmentsProtectedPostCreateAppointment"/>
+    <testcase name="Created appointment has SCHEDULED status" time="0.071" classname="04AppointmentsProtectedPostCreateAppointment"/>
+  </testsuite>
+  <testsuite name="04 Appointments - Protected / POST Create Appointment - Past Date" id="06f46f7d-275b-4b56-bc0d-2d953ba06ef5" timestamp="2026-05-16T06:36:43.644Z" tests="1" failures="0" errors="0" time="0.069">
+    <testcase name="Status is 400 for past appointment date" time="0.069" classname="04AppointmentsProtectedPostCreateAppointmentPastDate"/>
+  </testsuite>
+  <testsuite name="04 Appointments - Protected / PATCH Update Appointment Status" id="1a664ad9-fc0c-4206-abf9-e1ec5d8dcc55" timestamp="2026-05-16T06:36:43.644Z" tests="2" failures="0" errors="0" time="0.090">
+    <testcase name="Status is 200" time="0.090" classname="04AppointmentsProtectedPatchUpdateAppointmentStatus"/>
+    <testcase name="Appointment status is CONFIRMED" time="0.090" classname="04AppointmentsProtectedPatchUpdateAppointmentStatus"/>
+  </testsuite>
+</testsuites>
